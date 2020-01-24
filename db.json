@@ -1,34 +1,6 @@
 {
   "logs": [
     {
-      "id": 10,
-      "message": "Jen Smith",
-      "attention": false,
-      "tech": "Sam Smith",
-      "date": "2020-01-24T16:06:18.333Z"
-    },
-    {
-      "id": 11,
-      "message": "new log 123",
-      "attention": false,
-      "tech": "Jen Smith",
-      "date": "2020-01-24T16:06:48.596Z"
-    },
-    {
-      "id": 12,
-      "message": "sadafasdf",
-      "attention": true,
-      "tech": "Sara Wilson",
-      "date": "2020-01-24T16:06:33.065Z"
-    },
-    {
-      "message": "larry king",
-      "attention": false,
-      "tech": "Sara Wilson",
-      "date": "2020-01-24T16:23:56.155Z",
-      "id": 13
-    },
-    {
       "message": "mmeepo",
       "attention": true,
       "tech": "John Doe",
@@ -50,31 +22,6 @@
       "lastName": "Doe"
     },
     {
-      "id": 2,
-      "firstName": "Sam",
-      "lastName": "Smith"
-    },
-    {
-      "id": 3,
-      "firstName": "Sara",
-      "lastName": "Wilson"
-    },
-    {
-      "firstName": "new",
-      "lastName": "guy",
-      "id": 4
-    },
-    {
-      "firstName": "123",
-      "lastName": "123",
-      "id": 5
-    },
-    {
-      "firstName": "123",
-      "lastName": "qw",
-      "id": 6
-    },
-    {
       "firstName": "hubba",
       "lastName": "bubba",
       "id": 7
@@ -83,11 +30,6 @@
       "firstName": "Jim",
       "lastName": "Halpert",
       "id": 8
-    },
-    {
-      "firstName": "aa",
-      "lastName": "aa",
-      "id": 9
     },
     {
       "firstName": "magic",
