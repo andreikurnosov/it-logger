@@ -2,10 +2,10 @@ import React from 'react'
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
-import { deleteLog } from '../../actions/logActions';
+import { deleteLog, setCurrent } from '../../actions/logActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
 
-const LogItem = ({ log, deleteLog }) => {
+const LogItem = ({ log, deleteLog, setCurrent }) => {
   const { attention, tech, message, id, date } = log;
   const onDelete = () => {
     deleteLog(id);
@@ -14,7 +14,11 @@ const LogItem = ({ log, deleteLog }) => {
   return (
     <li className="collection-item">
       <div>
-        <a href="#edit-log-modal" className={`modal-trigger ${attention ? 'red-text' : 'blue-text'}`}>{message}</a>
+        <a 
+          href="#edit-log-modal" 
+          className={`modal-trigger ${attention ? 'red-text' : 'blue-text'}`}
+          onClick={() => setCurrent(log)}
+        >{message}</a>
         <br />
         <span className="grey-text">
           <span className="black-text">ID #{id}</span>{' '}
@@ -32,12 +36,14 @@ const LogItem = ({ log, deleteLog }) => {
 
 LogItem.propTypes = {
   log: PropTypes.object.isRequired,
-  deleteLog: PropTypes.func.isRequired
+  deleteLog: PropTypes.func.isRequired,
+  setCurrent: PropTypes.func.isRequired
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    deleteLog: (id) => dispatch(deleteLog(id))
+    deleteLog: (id) => dispatch(deleteLog(id)),
+    setCurrent: (current) => dispatch(setCurrent(current))
   }
 }
 
