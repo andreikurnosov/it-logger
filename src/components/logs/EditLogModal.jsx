@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { updateLog } from '../../actions/logActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
+import TechSelectOptions from '../techs/TechSelectOptions';
 
 const EditLogModal = ({ updateLog, current }) => {
   const [message, setMessage] = useState('');
@@ -15,7 +16,8 @@ const EditLogModal = ({ updateLog, current }) => {
       setAttention(current.attention)
       setTech(current.tech)
     }
-  }, [current])
+    // eslint-disable-next-line
+  }, [current]);
 
   const onSubmit = () => {
     if (message === '' || tech === '') {
@@ -29,7 +31,7 @@ const EditLogModal = ({ updateLog, current }) => {
         date: new Date()
       }
       updateLog(updatedLog);
-      M.toast({html: `Log updated by ${tech}`})
+      M.toast({ html: `Log updated by ${tech}` })
     }
     setMessage('');
     setTech('');
@@ -50,9 +52,7 @@ const EditLogModal = ({ updateLog, current }) => {
           <div className="input-field">
             <select name="tech" value={tech} className="browser-default" onChange={e => setTech(e.target.value)}>
               <option value="" disabled>Select Technician</option>
-              <option value="Jen Smith" >Jen Smith</option>
-              <option value="John Snow" >John Snow</option>
-              <option value="Lionel Richie" >Lionel Richie</option>
+              <TechSelectOptions />
             </select>
           </div>
         </div>
@@ -94,7 +94,5 @@ const mapDispatchToProps = (dispatch) => {
     updateLog: (current) => dispatch(updateLog(current))
   }
 }
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditLogModal);
