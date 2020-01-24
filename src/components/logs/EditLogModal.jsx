@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import M from 'materialize-css/dist/js/materialize.min.js';
 
-const AddLogModal = () => {
+const EditLogModal = () => {
   const [message, setMessage] = useState('');
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState('');
 
   const onSubmit = () => {
-    if (message === '' || tech === '') {
-      M.toast({ html: 'Please enter a message and tech' });
+    if(message === '' || tech === '') {
+      M.toast({html: 'Please enter a message and tech'});
     } else {
       console.log(message, tech, attention);
     }
@@ -18,7 +18,7 @@ const AddLogModal = () => {
   }
 
   return (
-    <div id="add-log-modal" className="modal" style={modalStyle}>
+    <div id="edit-log-modal" className="modal" style={modalStyle}>
       <div className="modal-content">
         <h4>Enter System Log</h4>
         <div className="row">
@@ -29,7 +29,7 @@ const AddLogModal = () => {
         </div>
         <div className="row">
           <div className="input-field">
-            <select name="tech" value={tech} className="browser-default" onChange={e => setTech(e.target.value)}>
+            <select name="tech" value={tech} className="browser-default" onChange={e => setTech (e.target.value)}>
               <option value="" disabled>Select Technician</option>
               <option value="Jen Smith" >Jen Smith</option>
               <option value="John Snow" >John Snow</option>
@@ -41,8 +41,8 @@ const AddLogModal = () => {
           <div className="input-field">
             <p>
               <label>
-                <input type="checkbox" className="field-in" checked={attention} value={attention}
-                  onChange={e => setAttention(!attention)} />
+                <input type="checkbox" className="field-in" checked={attention} value={attention} 
+                onChange={ e => setAttention(!attention)}/>
                 <span>Needs Attention</span>
               </label>
             </p>
@@ -61,4 +61,4 @@ const modalStyle = {
   height: '75%'
 }
 
-export default AddLogModal
+export default EditLogModal;
